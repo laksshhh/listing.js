@@ -48,7 +48,7 @@ font-family: "Plus Jakarta Sans", sans-serif !important;
 }
 
 /* cards */
-.card {
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -58,6 +58,7 @@ font-family: "Plus Jakarta Sans", sans-serif !important;
     width: 100% !important;
     object-fit: cover;
 }
+
 
 .card-body {
     padding: 0 !important;
@@ -90,4 +91,13 @@ font-family: "Plus Jakarta Sans", sans-serif !important;
 /* show page */
 .show-img {
     height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
 }
