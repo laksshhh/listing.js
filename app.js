@@ -43,17 +43,17 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-// const store = MongoStore.create({
-//   mongoUrl: dbUrl,
-//   crypto: {
-//     secret:"process.env.SECRET",
-//   },
-//   touchAfter: 24 * 3600,
-// });
+const store = MongoStore.create({
+  mongoUrl: dbUrl,
+  crypto: {
+    secret:"process.env.SECRET",
+  },
+  touchAfter: 24 * 3600,
+});
 
-// store.on("error", () => {
-//   console.log("error in session", err);
-// });
+store.on("error", () => {
+  console.log("error in session", err);
+});
 
 const sessionOptions = {
   secret : process.env.SECRET,
@@ -66,9 +66,9 @@ const sessionOptions = {
   },
 };
 
-// app.get("/", (req, res) => {
-//   res.send("i am groot");
-// });
+app.get("/", (req, res) => {
+  res.send("i am groot");
+});
 
 app.use(session(sessionOptions));
 app.use(flash());
